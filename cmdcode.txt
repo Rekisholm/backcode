@@ -1,0 +1,20 @@
+sudo passwd root
+sudo apt install tshark
+第一步：sudo vim /etc/ssh/sshd_config
+第二步：vim搜索 /PermitRootLogin 改成PermitRootLogin yes
+第三步：sudo systemctl restart sshd
+pip3 install psutil
+
+sudo /bin/bash install-sysdig.sh
+
+# 将压缩包内的全部脚本放在/root/路径下，在此目录下运行以下命令即可进行采集（不再需要单独启动采集器shell脚本）：
+sudo nohup python3 middle_process.py & sudo nohup python3 mv_and_delete.py
+
+# 关闭采集需关闭3个进程，分别为上述2个py文件和采集器sh文件，命令如下：
+ps -ef | grep mid
+sudo kill middle_process.py的pid
+ps -ef | grep mv
+sudo kill mv_and_delete.py的pid
+ps -ef | grep sysdig
+sudo kill sysdig采集器的pid
+# 建议在开启采集前首先此3个进程是否未运行【执行6-11行的命令】，然后再启动采集【执行3-4行的命令】
