@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  apache2:
+    image: httpd:2.4
+    container_name: apache2-file-server
+    ports:
+      - "8089:80"
+    volumes:
+      - ./file:/usr/local/apache2/htdocs
