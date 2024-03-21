@@ -50,9 +50,9 @@ def run_order(hostname, port, username, password):
     # 运行命令 更新代码从清华网盘
     client.exec_command("mkdir /root/sysfinal_files")
     command_list = [
-                    "wget -O /root/sysfinal_files/sysdig_final.sh https://cloud.tsinghua.edu.cn/f/663d7404f1294858b544/?dl=1",
-                    "wget -O /root/sysfinal_files/middle_process.py https://cloud.tsinghua.edu.cn/f/1588a2c0d7124608ac32/?dl=1",
-                    "wget -O /root/sysfinal_files/mv_and_delete.py https://cloud.tsinghua.edu.cn/f/22421653210f48558d31/?dl=1",
+                    "wget -O /root/sysdig_final.sh https://cloud.tsinghua.edu.cn/f/663d7404f1294858b544/?dl=1",
+                    "wget -O /root/middle_process.py https://cloud.tsinghua.edu.cn/f/1588a2c0d7124608ac32/?dl=1",
+                    "wget -O /root/mv_and_delete.py https://cloud.tsinghua.edu.cn/f/22421653210f48558d31/?dl=1",
                     ]
     for command in command_list:
         stdin, stdout, stderr = client.exec_command(command)
@@ -83,9 +83,9 @@ def run_order(hostname, port, username, password):
     # client.exec_command("mkdir /dev/shm/logs")
     # client.exec_command("mkdir /dev/shm/logs/ready")
     # client.exec_command("mkdir /dev/shm/logs/ready/sysready")
-    stdin, stdout, stderr = client.exec_command("chmod +x /root/sysfinal_files/sysdig_final.sh")
-    stdin, stdout, stderr = client.exec_command("nohup python3 /root/sysfinal_files/middle_process.py >/dev/null 2>&1 &")
-    stdin, stdout, stderr = client.exec_command("nohup python3 /root/sysfinal_files/mv_and_delete.py >/dev/null 2>&1 &")
+    stdin, stdout, stderr = client.exec_command("chmod +x /root/sysdig_final.sh")
+    stdin, stdout, stderr = client.exec_command("nohup python3 /root/middle_process.py >/dev/null 2>&1 &")
+    stdin, stdout, stderr = client.exec_command("nohup python3 /root/mv_and_delete.py >/dev/null 2>&1 &")
     time.sleep(2)
 
     # 这里检查是否部署成功，查看运行状态
