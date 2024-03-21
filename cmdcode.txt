@@ -7,8 +7,14 @@ pip3 install psutil
 
 sudo /bin/bash install-sysdig.sh
 
+
+sudo mkdir /dev/shm/logs/ready/sysready/
+sudo mkdir /dev/shm/logs/ready/sys_alert/
+sudo mkdir /dev/shm/logs/ready/sys_status/
+sudo mkdir /dev/shm/logs/sysdig/
+
 # 将压缩包内的全部脚本放在/root/路径下，在此目录下运行以下命令即可进行采集（不再需要单独启动采集器shell脚本）：
-sudo nohup python3 middle_process.py & sudo nohup python3 mv_and_delete.py
+sudo nohup python3 middle_process.py & sudo nohup python3 mv_and_delete.py &
 
 # 关闭采集需关闭3个进程，分别为上述2个py文件和采集器sh文件，命令如下：
 ps -ef | grep mid
