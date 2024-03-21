@@ -19,12 +19,12 @@ def run_order(hostname, port, username, password):
     client.connect(hostname, port, username, password)
     # 运行命令 更新代码从清华网盘
     # https://cloud.tsinghua.edu.cn/f/bded3fe038ac44a4b4fa/?dl=1
-    command_list = ["wget -O /root/capture_traffic/capture.py https://cloud.tsinghua.edu.cn/f/bded3fe038ac44a4b4fa/?dl=1",
-                    "wget -O /root/capture_traffic/script.py https://cloud.tsinghua.edu.cn/f/8f1a73558bf94c2fa1c0/?dl=1",
+    command_list = ["wget -O /root/capture_traffic/capture.py https://cloud.tsinghua.edu.cn/f/4619e69340f5459fa0b2/?dl=1",
+                    "wget -O /root/capture_traffic/script.py https://cloud.tsinghua.edu.cn/f/fb3d73b3fa82415bb962/?dl=1",
                     ]
-    client.exec_command("mkdir /root/capture_traffic")
-    client.exec_command("pip3 install psutil")
-    time.sleep(5)
+    #client.exec_command("mkdir /root/capture_traffic")
+    #client.exec_command("pip3 install psutil")
+    #time.sleep(5)
     for command in command_list:
         stdin, stdout, stderr = client.exec_command(command)
         time.sleep(3)
@@ -91,7 +91,7 @@ def run_order(hostname, port, username, password):
 
 
 #hostname = ['10.7.253.123', '10.7.253.124', '10.7.253.125', '10.7.253.126', '10.7.253.127','10.7.253.128', '10.7.253.129', '10.7.253.130', '10.7.253.131', '10.7.253.132']
-hostname = ['10.2.0.184','10.2.0.185']
+hostname = ['10.2.0.186','10.2.0.187','10.2.0.188','10.2.0.189','10.2.0.190']
 port = 22
 username = 'root'
 password = 'thusw0rd'
