@@ -50,9 +50,9 @@ def run_order(hostname, port, username, password):
     # 运行命令 更新代码从清华网盘
     client.exec_command("mkdir /root/sysfinal_files")
     command_list = [
-                    "wget -O /root/sysfinal_files/sysdig_final.sh https://cloud.tsinghua.edu.cn/f/6281e2c0bafb432e8dbb/?dl=1",
-                    "wget -O /root/sysfinal_files/middle_process.py https://cloud.tsinghua.edu.cn/f/4e5b30941f6b4d46849c/?dl=1",
-                    "wget -O /root/sysfinal_files/mv_and_delete.py https://cloud.tsinghua.edu.cn/f/10fe81d1944749359109/?dl=1",
+                    "wget -O /root/sysfinal_files/sysdig_final.sh https://cloud.tsinghua.edu.cn/f/663d7404f1294858b544/?dl=1",
+                    "wget -O /root/sysfinal_files/middle_process.py https://cloud.tsinghua.edu.cn/f/1588a2c0d7124608ac32/?dl=1",
+                    "wget -O /root/sysfinal_files/mv_and_delete.py https://cloud.tsinghua.edu.cn/f/22421653210f48558d31/?dl=1",
                     ]
     for command in command_list:
         stdin, stdout, stderr = client.exec_command(command)
